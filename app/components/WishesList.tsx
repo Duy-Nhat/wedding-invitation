@@ -66,7 +66,7 @@ const WishesList = () => {
 
       <div className="max-h-[500px] overflow-y-auto">
         {wishes.length === 0 ? (
-          <p>No wishes available</p>
+          <p>Hiện chưa có lời chúc nào</p>
         ) : (
           wishes.map((wish) => (
             <div key={wish._id} className="mb-4">
@@ -95,7 +95,7 @@ const WishesList = () => {
           }`}
           disabled={page === 1}
         >
-          Sebelumnya
+          Trang tiếp theo
         </button>
         <p className="text-xs">
           Page {page} of {totalPages}
@@ -107,7 +107,7 @@ const WishesList = () => {
           }`}
           disabled={page === totalPages}
         >
-          Selanjutnya
+          Trang tiếp theo
         </button>
       </div>
     </div>

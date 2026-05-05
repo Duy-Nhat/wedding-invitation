@@ -49,6 +49,8 @@ body {
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   background-color: #0a0a0a;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes animate {
@@ -109,5 +111,7 @@ body {
 }
 
 .text-shadow-wedding {
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 12px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
+
+

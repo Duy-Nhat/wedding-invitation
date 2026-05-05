@@ -51,14 +51,14 @@ const Form = () => {
     <form onSubmit={handleSubmit} className="mt-8 space-y-4">
       {/* Form fields */}
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-white">
-          Nama
+        <label htmlFor="name" className="block text-sm font-medium text-[#FFE4B5]">
+          Tên khách mời
         </label>
         <input
           type="text"
           name="name"
           id="name"
-          className="block w-full p-2 mt-1 bg-white/10 text-white border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="block w-full p-2 mt-1 bg-white/10 text-[#FFE4B5] border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           required
         />
       </div>
@@ -66,36 +66,35 @@ const Form = () => {
       <div>
         <label
           htmlFor="attendance"
-          className="block text-sm font-medium text-white"
+          className="block text-sm font-medium text-[#FFE4B5]"
         >
-          Kehadiran
+          Tham dự
         </label>
         <select
           id="attendance"
           name="attendance"
-          className="block w-full p-2 mt-1 bg-black/40 text-white border border-gray-300 rounded-md shadow-sm  sm:text-sm"
+          className="block w-full p-2 mt-1 bg-black/40 text-[#FFE4B5] border border-gray-300 rounded-md shadow-sm  sm:text-sm"
           required
         >
-          <option value="">Pilih Kehadiran</option>
-          <option value="Hadir">Hadir</option>
-          <option value="Tidak Hadir">Tidak Hadir</option>
+          <option value="Hadir">Có</option>
+          <option value="Tidak Hadir">Không</option>
         </select>
       </div>
 
       <div>
         <label
           htmlFor="guests"
-          className="block text-sm font-medium text-white"
+          className="block text-sm font-medium text-[#FFE4B5]"
         >
-          Jumlah Tamu
+          Sánh đôi 
         </label>
         <select
           id="guests"
           name="guests"
-          className="block w-full p-2 mt-1  bg-black/40 text-white border border-gray-300 rounded-md shadow-sm  sm:text-sm"
+          className="block w-full p-2 mt-1  bg-black/40 text-[#FFE4B5] border border-gray-300 rounded-md shadow-sm  sm:text-sm"
           required
         >
-          <option value="">Pilih Jumlah Tamu</option>
+          <option value="1">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -106,15 +105,15 @@ const Form = () => {
       <div>
         <label
           htmlFor="message"
-          className="block text-sm font-medium text-white"
+          className="block text-sm font-medium text-[#FFE4B5]"
         >
-          Ucapan
+          Dặn dò
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
-          className="block w-full p-2 mt-1 bg-white/10 text-white border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="block w-full p-2 mt-1 bg-white/10 text-[#FFE4B5] border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           required
         />
       </div>
@@ -122,7 +121,7 @@ const Form = () => {
       <div>
         <button
           type="submit"
-          className="block w-full p-2 text-sm font-medium text-center text-black bg-white border border-transparent rounded-md shadow-sm"
+          className="block w-full p-2 text-sm font-medium text-center text-white bg-[#FFE4B5] border border-transparent rounded-md shadow-sm"
           disabled={loading} 
         >
           {loading ? "Submitting..." : "Submit"} 
