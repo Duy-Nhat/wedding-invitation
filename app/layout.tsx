@@ -31,7 +31,10 @@ const ovo = Ovo({
 
 export const metadata: Metadata = {
   title: `The Wedding of ${config.coupleNames}`,
-  description: `Wedding Invitation of ${config.coupleNames}, made by Peter Shaan`,
+  description: `Wedding Invitation of ${config.coupleNames}, made by Nhat-Tram`,
+  icons: {
+    icon: "/favicon.ico", 
+  },
 };
 
 export default function RootLayout({

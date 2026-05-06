@@ -495,19 +495,30 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
 
             {/* SLIDE 9 */}
             {config.rsvp.enabled && (
-              <div
-                className="snap-start text-[#FFE4B5] text-shadow-wedding h-screen flex flex-col justify-center pt-16 pb-16 px-8"
-                style={{
-                  backgroundImage: `url(/slide_9.jpg)`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
+              <div className="snap-start h-screen flex flex-col justify-center pt-16 pb-16 px-8 relative overflow-hidden">
+
+                {/* Background blur */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage: `url(/slide_9.jpg)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    filter: "blur(1px)",   // 👈 độ mờ
+                    transform: "scale(1.1)", // tránh viền trắng
+                    zIndex: 0,
+                  }}
+                />
+
+                {/* Overlay làm tối */}
+                <div className="absolute inset-0 bg-black/30 z-[1]" />
+
+                {/* Content */}
                 <div
                   ref={slide9Ref}
-                  className={`${isSlide9InView ? "active" : ""} fadeInMove`}
+                  className={`relative z-[2] ${isSlide9InView ? "active" : ""} fadeInMove text-[#FFE4B5] text-shadow-wedding`}
                 >
-                  <h1 className="text-3xl text-[#FFE4B5] text-shadow-wedding font-ovo text-center uppercase">
+                  <h1 className="text-3xl font-ovo text-center uppercase">
                     XÁC NHẬN THAM DỰ & LỜI CHÚC
                   </h1>
                   <p className="text-sm font-legan text-[#FFE4B5] text-shadow-wedding/80 text-center">
@@ -539,40 +550,57 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
               </div>
             </div>
 
-            {/* SLIDE AKHIR */}
-            <div
-              className="snap-start text-[#FAF0DC] text-shadow-wedding h-screen flex flex-col justify-end pt-16 pb-16 px-12 "
-              style={{
-                backgroundImage: `url(/slide_7.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div
-                ref={endRef}
-                className={` ${isEndInView ? "active" : ""} fadeInMove `}
-              >
-                <h1 className="text-3xl text-[#FAF0DC] text-shadow-wedding  font-ovo text-center uppercase">
-                  {config.thankyou}
-                </h1>
+            {/* SLIDE  */}
+            <div className="snap-start h-screen flex flex-col justify-end pt-16 pb-16 px-12 relative overflow-hidden">
 
-                <div className="mt-5 mx-auto flex flex-col ">
-                  <p className="text-sm font-legan text-[#FAF0DC] text-shadow-wedding text-center">
-                    {config.thankyouDetail}
-                  </p>
-                  <p className="text-sm rounded-full text-center font-ovo mt-5 px-6 py-2 text-[#FAF0DC] text-shadow-wedding uppercase">
-                    {config.coupleNames}
-                  </p>
-                </div>
-              </div>
+  {/* Background blur */}
+  <div
+    className="absolute inset-0"
+    style={{
+      backgroundImage: `url(/slide_7.jpg)`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      filter: "blur(0.5px)", // 👈 chỉnh độ mờ
+      transform: "scale(1.1)", // tránh viền trắng
+      zIndex: 0,
+    }}
+  />
 
-              <footer className="flex flex-col items-center mt-8">
-                <p className="text-[0.5rem] uppercase text-center">
-                  Created By Duy Nhat - Hue Tram
-                </p>
-                <p className="text-xs">© All rights reserved by Vo Duy Nhat and Nguyen Huynh Hue Tram</p>
-              </footer>
-            </div>
+  {/* Overlay làm tối */}
+  <div className="absolute inset-0 bg-black/30 z-[1]" />
+
+  {/* Nội dung */}
+  <div
+    ref={endRef}
+    className={`relative z-[2] ${
+      isEndInView ? "active" : ""
+    } fadeInMove text-[#FAF0DC] text-shadow-wedding`}
+  >
+    <h1 className="text-3xl font-ovo text-center uppercase">
+      {config.thankyou}
+    </h1>
+
+    <div className="mt-5 mx-auto flex flex-col">
+      <p className="text-sm font-legan text-center">
+        {config.thankyouDetail}
+      </p>
+      <p className="text-sm rounded-full text-center font-ovo mt-5 px-6 py-2 uppercase">
+        {config.coupleNames}
+      </p>
+    </div>
+  </div>
+
+  {/* Footer */}
+  <footer className="relative z-[2] flex flex-col items-center mt-8 text-[#FAF0DC] text-shadow-wedding">
+    <p className="text-[0.5rem] uppercase text-center">
+      Created By Duy Nhat - Hue Tram
+    </p>
+    <p className="text-xs text-center">
+      © All rights reserved by Vo Duy Nhat and Nguyen Huynh Hue Tram
+    </p>
+  </footer>
+
+</div>
           </>
         )}
       </div>

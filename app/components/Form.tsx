@@ -76,8 +76,8 @@ const Form = () => {
           className="block w-full p-2 mt-1 bg-black/40 text-[#FFE4B5] border border-gray-300 rounded-md shadow-sm  sm:text-sm"
           required
         >
-          <option value="Hadir">Có</option>
-          <option value="Tidak Hadir">Không</option>
+          <option value="Hadir">Nhất định chung vui</option>
+          <option value="Tidak Hadir">Xin gửi lời chúc từ xa</option>
         </select>
       </div>
 
@@ -107,7 +107,7 @@ const Form = () => {
           htmlFor="message"
           className="block text-sm font-medium text-[#FFE4B5]"
         >
-          Dặn dò
+          Lời chúc
         </label>
         <textarea
           id="message"
