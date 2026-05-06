@@ -2,7 +2,7 @@
   <img alt=" Weedingly Free – an open-source wedding invitation." src="public/remove_me/logo.png" width="100" >
   <h1 align="center">Weedingly</h1>
   <p align="center">
-        Made with ❤️ by <a ref="https://github.com/petershaan12">Peter Shaan</a>.
+        Made with ❤️ by <a ref="https://github.com/Duy-Nhat">Duy Nhat</a>.
     </p>
 </p>
 
@@ -118,7 +118,7 @@ You can customize the following via environment variables:
 </p>
 
 * Custom Guest Names: If you'd like to personalize guest names such as Dear Peter or to:John, set your url with "to:".
-  ex (`https://weddingly-free.vercel.app/to:Edward%20Tauran`)
+  ex (`https://wedding-nhat-tram.vercel.app/to:Edward%20Tauran`)
 
 ## License
 
